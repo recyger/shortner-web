@@ -1,0 +1,11 @@
+home:
+    path:     /
+    controller: App\Controller\LinkController::new
+shortener:
+    path:     /l/{link}
+    controller: App\Controller\LinkController::shortner
+    requirements:
+        link: '[\w\d]+'
+controllers:
+    resource: '../src/Controller/'
+    type:     annotation

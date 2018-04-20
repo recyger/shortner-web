@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}View index{% endblock %}
+
+{% block body %}
+    <h1>View index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Agent</th>
+                <th>Created_at</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for view in views %}
+            <tr>
+                <td>{{ view.id }}</td>
+                <td>{{ view.agent }}</td>
+                <td>{{ view.created_at ? view.created_at|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('view_show', {'id': view.id}) }}">show</a>
+                    <a href="{{ path('view_edit', {'id': view.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

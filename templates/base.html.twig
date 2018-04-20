@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+          integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+<nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+    <div class="collapse navbar-collapse my-2 my-lg-0" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('link_new') }}">
+                    <i class="far fa-plus-square"></i>
+                    new Link
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('link_index') }}">
+                    <i class="fas fa-list-ul"></i> List links
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        {#<nav class="col-md-2 d-none d-md-block bg-light sidebar">#}
+            {#<div class="sidebar-sticky">#}
+                {#{% block sidebar %}#}
+                    {#{% include '_sidebar.twig' %}#}
+                {#{% endblock %}#}
+            {#</div>#}
+        {#</nav>#}
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            {% block body %}{% endblock %}
+        </main>
+    </div>
+</div>
+{% block javascripts %}{% endblock %}
+</body>
+</html>

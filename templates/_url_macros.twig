@@ -1,0 +1,2 @@
+{% macro start(route) %}{% if app.request.get('_route') starts with route %}active{% endif %}{% endmacro %}
+{% macro end(route) %}{% if app.request.get('_route') ends with route %}active{% endif %}{% endmacro %}

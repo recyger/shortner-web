@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Link{% endblock %}
+
+{% block body %}
+    <h1>Link</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Url</th>
+                <td>{{ link.url }}</td>
+            </tr>
+            <tr>
+                <th>Shortener</th>
+                <td>{{ url('shortener', {'link': link.shortener}) }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,18 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+<hr>
+{% if user.id %}
+<a class="btn btn-info" href="{{ path('user_show', {'id': user.id}) }}" role="button"><i class="fas fa-eye"></i> View</a>
+{% endif %}
+<button type="submit" class="btn btn-primary" form="user">
+    <i class="fas fa-save"></i>
+    {% if user.id %}
+        Update
+    {% else %}
+        Save
+    {% endif %}
+</button>
+{% if user.id %}
+    {{ include('user/_delete_form.html.twig') }}
+{% endif %}
+{{ form_end(form) }}

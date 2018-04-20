@@ -1,0 +1,22 @@
+{% import "_url_macros.twig" as url %}
+
+<ul class="nav flex-column">
+    <li class="nav-item">
+        <a class="nav-link {{ url.end('index') }}" href="{{ path('user_index') }}">
+            <i class="fas fa-users"></i>
+            List users
+        </a>
+    </li>
+    <li class="nav-item">
+        <hr>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link {{ url.end('new') }}" href="{{ path('user_new') }}">
+            <i class="fas fa-user-plus"></i>
+            Create new user
+        </a>
+    </li>
+    <li class="nav-item">
+        <hr>
+    </li>
+</ul>
